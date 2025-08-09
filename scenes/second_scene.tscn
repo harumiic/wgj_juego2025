@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cynctwv5vxhyv"]
+[gd_scene load_steps=3 format=3 uid="uid://beg4nuohtq6ld"]
 
-[ext_resource type="Texture2D" uid="uid://cxujfwrsl0rp3" path="res://assets/images/My Neighbor Totoro.png" id="1_ee4on"]
+[ext_resource type="Texture2D" uid="uid://be7xmee4h1qqv" path="res://assets/sprites/fondo_pasteleria/FONDO BORRADOR.jpg" id="1_quay6"]
+[ext_resource type="Script" uid="uid://bmivihj0kp3x4" path="res://scenes/second_scene.gd" id="1_wr80a"]
 
 [node name="second_scene" type="Node2D"]
+script = ExtResource("1_wr80a")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -16,11 +18,50 @@ grow_vertical = 2
 
 [node name="Background" type="TextureRect" parent="UI/Control"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.278
+anchor_top = 0.14
+anchor_right = 1.091
+anchor_bottom = 0.536
+offset_left = -311.256
+offset_top = -84.72
+offset_right = 1180.61
+offset_bottom = 341.672
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ee4on")
-expand_mode = 1
+texture = ExtResource("1_quay6")
+expand_mode = 3
+stretch_mode = 4
 flip_h = true
+
+[node name="flecha_izquierda" type="TextureButton" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.215
+anchor_bottom = 0.163
+offset_left = 2305.0
+offset_top = 354.0
+offset_right = 2097.32
+offset_bottom = 288.376
+toggle_mode = true
+button_pressed = true
+
+[node name="flecha_derecha" type="TextureButton" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.204
+anchor_bottom = 0.184
+offset_left = 8.0
+offset_top = 385.0
+offset_right = 8.0
+offset_bottom = 385.0
+toggle_mode = true
+button_pressed = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Control"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1147, 363)
+
+[connection signal="pressed" from="UI/Control/flecha_izquierda" to="." method="_on_flecha_izquierda_pressed"]
+[connection signal="pressed" from="UI/Control/flecha_derecha" to="." method="_on_flecha_derecha_pressed"]

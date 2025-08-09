@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnbr0cdoalujp"]
+
+[ext_resource type="Texture2D" uid="uid://be7xmee4h1qqv" path="res://assets/sprites/fondo_pasteleria/FONDO BORRADOR.jpg" id="1_wtcfe"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="FondoBorrador" type="Sprite2D" parent="."]
+position = Vector2(-17, -14)
+scale = Vector2(1.23698, 1.31019)
+texture = ExtResource("1_wtcfe")
