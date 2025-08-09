@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cynctwv5vxhyv"]
 
-[ext_resource type="Texture2D" uid="uid://cxujfwrsl0rp3" path="res://assets/images/My Neighbor Totoro.png" id="1_ee4on"]
+[ext_resource type="Texture2D" uid="uid://cxujfwrsl0rp3" path="res://assets/sprites/My Neighbor Totoro.png" id="1_ee4on"]
 
 [node name="second_scene" type="Node2D"]
 
