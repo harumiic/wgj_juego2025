@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://bado3hcwi304f"]
+
+[ext_resource type="Script" uid="uid://cq4w1fr64ppep" path="res://scenes/historia_2.gd" id="1_lubuw"]
+[ext_resource type="Script" uid="uid://cou7hjbmikk5y" path="res://scenes/control.gd" id="1_o6hrh"]
+[ext_resource type="Texture2D" uid="uid://cv3ekw51dalut" path="res://assets/fondo_pasteleria/Historia2.png" id="1_w0f1b"]
+[ext_resource type="Texture2D" uid="uid://dacvrokh3jmgl" path="res://assets/sprites/objetos/flecha_izquierda.png" id="3_lubuw"]
+[ext_resource type="Texture2D" uid="uid://diwgvop5hcuox" path="res://assets/ui/Artboard 13 copy 3.png" id="5_26c7f"]
+
+[node name="Historia2" type="Node2D"]
+script = ExtResource("1_lubuw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_o6hrh")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_w0f1b")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/TextureRect"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 541.0
+offset_right = 106.0
+offset_bottom = 611.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_lubuw")
+flat = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Control/TextureRect"]
+layout_mode = 0
+offset_left = 1049.0
+offset_top = 544.0
+offset_right = 1367.0
+offset_bottom = 871.0
+scale = Vector2(0.19189, 0.186231)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/MarginContainer2"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/TextureRect/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("5_26c7f")
+flat = true
+
+[connection signal="pressed" from="CanvasLayer/Control/TextureRect/MarginContainer/HBoxContainer/Button" to="." method="_on_historia2_atras"]
+[connection signal="pressed" from="CanvasLayer/Control/TextureRect/MarginContainer2/HBoxContainer/Button" to="." method="_on_historia2_adelante"]
