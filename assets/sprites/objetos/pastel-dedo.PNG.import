@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbj2xb2xtb6it"
-path="res://.godot/imported/torta1.png-398ccfabde56998363a709da2acfaeea.ctex"
+uid="uid://blqduenrgl1i5"
+path="res://.godot/imported/pastel-dedo.PNG-894c01093a0f836c8828438ca74e1da0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/objetos/torta1.png"
-dest_files=["res://.godot/imported/torta1.png-398ccfabde56998363a709da2acfaeea.ctex"]
+source_file="res://assets/sprites/objetos/pastel-dedo.PNG"
+dest_files=["res://.godot/imported/pastel-dedo.PNG-894c01093a0f836c8828438ca74e1da0.ctex"]
 
 [params]
 

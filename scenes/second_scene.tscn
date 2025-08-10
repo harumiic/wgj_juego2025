@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://beg4nuohtq6ld"]
+[gd_scene load_steps=4 format=3 uid="uid://cynctwv5vxhyv"]
 
 [ext_resource type="Texture2D" uid="uid://be7xmee4h1qqv" path="res://assets/fondo_pasteleria/FONDO BORRADOR.jpg" id="1_quay6"]
-[ext_resource type="Script" uid="uid://bmivihj0kp3x4" path="res://scenes/second_scene.gd" id="1_wr80a"]
+[ext_resource type="Script" uid="uid://bmivihj0kp3x4" path="res://scripts/second_scene.gd" id="1_wr80a"]
+[ext_resource type="Texture2D" uid="uid://blqduenrgl1i5" path="res://assets/sprites/objetos/pastel-dedo.PNG" id="3_70jnc"]
 
-[node name="second_scene" type="Node2D" node_paths=PackedStringArray("fondo")]
+[node name="second_scene" type="Node2D" node_paths=PackedStringArray("fondo", "pastel_dedo", "pastel_dedo_centro")]
 script = ExtResource("1_wr80a")
 fondo = NodePath("UI/Control/Background")
+pastel_dedo = NodePath("UI/Control/Background/pastel_dedo")
+pastel_dedo_centro = NodePath("UI/Control/pastel_dedo_centro")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -23,19 +26,28 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.278
-anchor_top = 0.14
-anchor_right = 1.091
-anchor_bottom = 0.536
+anchor_top = 0.005
+anchor_right = 1.983
+anchor_bottom = 1.035
 offset_left = -317.7
-offset_top = -84.36
-offset_right = 1174.17
-offset_bottom = 281.032
+offset_top = -0.12
+offset_right = 7.77222
+offset_bottom = 0.159973
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_quay6")
 expand_mode = 3
 stretch_mode = 4
 flip_h = true
+
+[node name="pastel_dedo" type="TextureRect" parent="UI/Control/Background"]
+layout_mode = 2
+offset_left = 833.0
+offset_top = 211.0
+offset_right = 1122.0
+offset_bottom = 500.0
+texture = ExtResource("3_70jnc")
+expand_mode = 2
 
 [node name="flecha_derecha" type="Button" parent="UI/Control"]
 layout_mode = 1
@@ -61,7 +73,16 @@ offset_bottom = 228.768
 toggle_mode = true
 button_pressed = true
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/Control"]
+[node name="pastel_dedo_centro" type="TextureRect" parent="UI/Control"]
+visible = false
+layout_mode = 0
+offset_left = 281.0
+offset_top = 3.0
+offset_right = 916.0
+offset_bottom = 638.0
+texture = ExtResource("3_70jnc")
+expand_mode = 1
 
+[connection signal="gui_input" from="UI/Control/Background/pastel_dedo" to="." method="_on_pastel_dedo"]
 [connection signal="pressed" from="UI/Control/flecha_derecha" to="." method="_on_flecha_derecha_pressed"]
 [connection signal="pressed" from="UI/Control/flecha_izquierda" to="." method="_on_flecha_izquierda_pressed"]
