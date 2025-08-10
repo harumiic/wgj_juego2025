@@ -1,7 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cynctwv5vxhyv"]
 
 [ext_resource type="Texture2D" uid="uid://be7xmee4h1qqv" path="res://assets/fondo_pasteleria/FONDO BORRADOR.jpg" id="1_quay6"]
-[ext_resource type="Script" uid="uid://bmivihj0kp3x4" path="res://scripts/second_scene.gd" id="1_wr80a"]
 [ext_resource type="Texture2D" uid="uid://blqduenrgl1i5" path="res://assets/sprites/objetos/pastel-dedo.PNG" id="3_70jnc"]
 [ext_resource type="Texture2D" uid="uid://dacvrokh3jmgl" path="res://assets/sprites/objetos/flecha_izquierda.png" id="4_3lxov"]
 [ext_resource type="Texture2D" uid="uid://b4mmtd6gj2qke" path="res://assets/sprites/objetos/flecha_derecha.png" id="4_d71sn"]

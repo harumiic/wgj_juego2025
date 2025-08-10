@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxl4k2r6unsa6"]
+[gd_scene load_steps=7 format=3 uid="uid://bxl4k2r6unsa6"]
 
-[ext_resource type="Texture2D" uid="uid://cxujfwrsl0rp3" path="res://assets/sprites/My Neighbor Totoro.png" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://b5l7m0etp82dm" path="res://scripts/ui.gd" id="1_uu6xs"]
+[ext_resource type="Texture2D" uid="uid://boe6f5x8lugsm" path="res://assets/sprites/Group.png" id="2_uu6xs"]
+[ext_resource type="Texture2D" uid="uid://wugusuv7hory" path="res://assets/ui/Play.png" id="3_r0du0"]
+[ext_resource type="Texture2D" uid="uid://4j4udablqsx0" path="res://assets/ui/Credits.png" id="4_fos0i"]
+[ext_resource type="Texture2D" uid="uid://juomfyvesjjp" path="res://assets/ui/Quit.png" id="5_3dxm6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glv2v"]
 
@@ -23,10 +26,63 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_glv2v")
+texture = ExtResource("2_uu6xs")
 expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/TextureRect"]
+custom_minimum_size = Vector2(65, 90)
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.031
+offset_left = 65.0
+offset_top = 269.0
+offset_right = 166.0
+offset_bottom = 338.912
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/TextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="CanvasLayer/UI/TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_r0du0")
+flat = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/UI/TextureRect"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 326.0
+offset_right = 212.0
+offset_bottom = 413.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/TextureRect/MarginContainer2"]
+layout_mode = 2
+
+[node name="Credits" type="Button" parent="CanvasLayer/UI/TextureRect/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+button_mask = 0
+icon = ExtResource("4_fos0i")
+flat = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/UI/TextureRect"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 402.0
+offset_right = 224.0
+offset_bottom = 461.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/TextureRect/MarginContainer3"]
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="CanvasLayer/UI/TextureRect/MarginContainer3/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("5_3dxm6")
+flat = true
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI"]
 layout_mode = 1
@@ -34,7 +90,10 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -100.0
+offset_left = 5.0
+offset_top = -137.0
+offset_right = 5.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 20
@@ -63,4 +122,5 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 
+[connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer/HBoxContainer/Play" to="CanvasLayer/UI" method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/MarginContainer/HBoxContainer/Button" to="CanvasLayer/UI" method="_on_button_pressed"]
