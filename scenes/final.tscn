@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmangn85pcs4x"]
+
+[ext_resource type="Script" uid="uid://b64j81wrybf2p" path="res://scenes/gameplay.gd" id="1_op64y"]
+[ext_resource type="Texture2D" uid="uid://88quiv7i0ttc" path="res://assets/fondo_pasteleria/final.png" id="2_op64y"]
+[ext_resource type="Script" uid="uid://bhnl5k7xe56m4" path="res://scenes/button.gd" id="3_y0die"]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource("1_op64y")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1153.0
+offset_bottom = 650.0
+texture = ExtResource("2_op64y")
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/TextureRect"]
+layout_mode = 0
+offset_left = 1046.0
+offset_top = 542.0
+offset_right = 1081.0
+offset_bottom = 576.0
+script = ExtResource("3_y0die")
+
+[connection signal="pressed" from="CanvasLayer/Control/TextureRect/Button" to="." method="_on_ganaste_pressed"]

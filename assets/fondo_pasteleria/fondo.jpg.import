@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu4wjx4lrcfjk"
-path="res://.godot/imported/vaquita.png-8e09f937bc1bb39caddddc4656651126.ctex"
+uid="uid://batsud4uio26b"
+path="res://.godot/imported/fondo.jpg-e41836a13926ca87130b4ad8bbf6febf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/objetos/vaquita.png"
-dest_files=["res://.godot/imported/vaquita.png-8e09f937bc1bb39caddddc4656651126.ctex"]
+source_file="res://assets/fondo_pasteleria/fondo.jpg"
+dest_files=["res://.godot/imported/fondo.jpg-e41836a13926ca87130b4ad8bbf6febf.ctex"]
 
 [params]
 

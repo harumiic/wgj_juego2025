@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c060ibcil0bd7"
-path="res://.godot/imported/Gameplay.png-5bdc95a3f38edb8e8dc87489174aa2da.ctex"
+uid="uid://dllhrnoo7r08i"
+path="res://.godot/imported/leche_veneno.PNG-c3a428e73bd2b4a2f7c9eff0128b0109.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fondo_pasteleria/Gameplay.png"
-dest_files=["res://.godot/imported/Gameplay.png-5bdc95a3f38edb8e8dc87489174aa2da.ctex"]
+source_file="res://assets/sprites/objetos/leche_veneno.PNG"
+dest_files=["res://.godot/imported/leche_veneno.PNG-c3a428e73bd2b4a2f7c9eff0128b0109.ctex"]
 
 [params]
 

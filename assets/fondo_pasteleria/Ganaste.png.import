@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c060ibcil0bd7"
-path="res://.godot/imported/Gameplay.png-5bdc95a3f38edb8e8dc87489174aa2da.ctex"
+uid="uid://dk0dlytbpb4t1"
+path="res://.godot/imported/Ganaste.png-96a40561ac6d688af077683bf341e171.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fondo_pasteleria/Gameplay.png"
-dest_files=["res://.godot/imported/Gameplay.png-5bdc95a3f38edb8e8dc87489174aa2da.ctex"]
+source_file="res://assets/fondo_pasteleria/Ganaste.png"
+dest_files=["res://.godot/imported/Ganaste.png-96a40561ac6d688af077683bf341e171.ctex"]
 
 [params]
 

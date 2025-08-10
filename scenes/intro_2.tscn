@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://6lhd8vyq3j3m"]
+[gd_scene load_steps=4 format=3 uid="uid://dnb0p0tjk4327"]
 
-[ext_resource type="Texture2D" uid="uid://c060ibcil0bd7" path="res://assets/fondo_pasteleria/Gameplay.png" id="1_4aew2"]
-[ext_resource type="Script" uid="uid://b64j81wrybf2p" path="res://scenes/gameplay.gd" id="1_75vxi"]
-[ext_resource type="Script" uid="uid://bhnl5k7xe56m4" path="res://scenes/button.gd" id="3_5sdaa"]
+[ext_resource type="Script" uid="uid://b64j81wrybf2p" path="res://scenes/gameplay.gd" id="1_nt4xl"]
+[ext_resource type="Texture2D" uid="uid://c305835pcb4il" path="res://assets/fondo_pasteleria/intro_2.png" id="2_nt4xl"]
+[ext_resource type="Script" uid="uid://bhnl5k7xe56m4" path="res://scenes/button.gd" id="3_ruafn"]
 
 [node name="Gameplay" type="Node2D"]
-script = ExtResource("1_75vxi")
+script = ExtResource("1_nt4xl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -21,7 +21,7 @@ offset_left = 1.0
 offset_top = 2.0
 offset_right = 1153.0
 offset_bottom = 650.0
-texture = ExtResource("1_4aew2")
+texture = ExtResource("2_nt4xl")
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/TextureRect"]
 layout_mode = 0
@@ -29,6 +29,6 @@ offset_left = 1046.0
 offset_top = 542.0
 offset_right = 1081.0
 offset_bottom = 576.0
-script = ExtResource("3_5sdaa")
+script = ExtResource("3_ruafn")
 
 [connection signal="pressed" from="CanvasLayer/Control/TextureRect/Button" to="." method="_on_button_pressed"]

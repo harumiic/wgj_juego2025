@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c060ibcil0bd7"
-path="res://.godot/imported/Gameplay.png-5bdc95a3f38edb8e8dc87489174aa2da.ctex"
+uid="uid://bl6ixab8hgpuj"
+path="res://.godot/imported/ojo.PNG-9493936b87e0f6e6145fb3b25d72a189.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fondo_pasteleria/Gameplay.png"
-dest_files=["res://.godot/imported/Gameplay.png-5bdc95a3f38edb8e8dc87489174aa2da.ctex"]
+source_file="res://assets/sprites/objetos/ojo.PNG"
+dest_files=["res://.godot/imported/ojo.PNG-9493936b87e0f6e6145fb3b25d72a189.ctex"]
 
 [params]
 
