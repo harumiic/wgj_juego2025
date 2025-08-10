@@ -24,11 +24,12 @@ offset_bottom = 650.0
 texture = ExtResource("2_nt4xl")
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/TextureRect"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 1046.0
-offset_top = 542.0
-offset_right = 1081.0
-offset_bottom = 576.0
+offset_left = 270.0
+offset_top = 372.0
+offset_right = 881.0
+offset_bottom = 437.0
 script = ExtResource("3_ruafn")
 
 [connection signal="pressed" from="CanvasLayer/Control/TextureRect/Button" to="." method="_on_button_pressed"]

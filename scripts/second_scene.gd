@@ -111,7 +111,7 @@ func _on_pastel_dedo(event: InputEvent):
 				print("Stopped early: 3 misses")
 				await get_tree().create_timer(4).timeout
 				get_tree().change_scene_to_file("res://scenes/GameOver.tscn")
-				break
+				return
 				
 		miss_count=0
 		
