@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://6lhd8vyq3j3m"]
 
 [ext_resource type="Texture2D" uid="uid://bunklllfcceeu" path="res://assets/fondo_pasteleria/Gameplay.png" id="1_4aew2"]
-[ext_resource type="Script" uid="uid://b64j81wrybf2p" path="res://scenes/gameplay.gd" id="1_75vxi"]
-[ext_resource type="Script" uid="uid://bhnl5k7xe56m4" path="res://scenes/button.gd" id="3_5sdaa"]
+[ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_75vxi"]
+[ext_resource type="Script" path="res://scenes/button.gd" id="3_5sdaa"]
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource("1_75vxi")
