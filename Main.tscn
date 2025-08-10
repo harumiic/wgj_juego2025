@@ -98,5 +98,3 @@ flat = true
 [connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer2/HBoxContainer/Credits" to="CanvasLayer/UI" method="_on_credits_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer2/MarginContainer4/HBoxContainer/credits2" to="CanvasLayer/UI" method="_on_credits_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer3/HBoxContainer/Quit" to="CanvasLayer/UI" method="_on_quit_pressed"]
-[connection signal="pressed" from="CanvasLayer/UI/MarginContainer/HBoxContainer/Button" to="CanvasLayer/UI" method="_on_button_pressed"]
-

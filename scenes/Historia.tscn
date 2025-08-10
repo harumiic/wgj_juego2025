@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://ov3ojy0frbvo"]
+
+[ext_resource type="Script" uid="uid://cou7hjbmikk5y" path="res://scenes/control.gd" id="1_ynj4v"]
+[ext_resource type="Texture2D" uid="uid://dxl1lb5cbjxqm" path="res://assets/fondo_pasteleria/Historia.png" id="2_nsfvc"]
+[ext_resource type="Texture2D" uid="uid://b4mmtd6gj2qke" path="res://assets/sprites/objetos/flecha_derecha.png" id="3_ynj4v"]
+[ext_resource type="Texture2D" uid="uid://cqyaehr3ul45c" path="res://assets/ui/Artboard 13 copy 4.png" id="4_nsfvc"]
+[ext_resource type="Texture2D" uid="uid://ds055a4s3tobs" path="res://assets/ui/Artboard 1 copy 4.png" id="5_ynj4v"]
+
+[node name="Historia" type="Node2D"]
+position = Vector2(2, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ynj4v")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.8
+anchor_bottom = 16.2
+texture = ExtResource("2_nsfvc")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/TextureRect"]
+layout_mode = 0
+offset_left = 1046.0
+offset_top = 524.0
+offset_right = 1144.0
+offset_bottom = 628.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_ynj4v")
+flat = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_top = 544.0
+offset_right = -793.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.194871, 0.190937)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/MarginContainer2"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/TextureRect/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("4_nsfvc")
+flat = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/Control/TextureRect"]
+layout_mode = 0
+offset_left = 909.0
+offset_top = 543.0
+offset_right = 1567.0
+offset_bottom = 870.0
+scale = Vector2(0.199125, 0.192141)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/MarginContainer3"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/TextureRect/MarginContainer3/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("5_ynj4v")
+flat = true
+
+[connection signal="pressed" from="CanvasLayer/Control/TextureRect/MarginContainer/HBoxContainer/Button" to="CanvasLayer/Control" method="_on_button_flecha"]
+[connection signal="pressed" from="CanvasLayer/Control/TextureRect/MarginContainer2/HBoxContainer/Button" to="CanvasLayer/Control" method="_on_button_casita"]
+[connection signal="pressed" from="CanvasLayer/Control/TextureRect/MarginContainer3/HBoxContainer/Button" to="CanvasLayer/Control" method="_on_button_gameplay"]

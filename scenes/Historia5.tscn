@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpvma7raih2m0"]
+
+[ext_resource type="Script" uid="uid://byrlrv2e26t12" path="res://scenes/historia_5.gd" id="1_p1i0o"]
+[ext_resource type="Texture2D" uid="uid://dli3bkcofpar2" path="res://assets/fondo_pasteleria/Group 20.png" id="2_p1i0o"]
+[ext_resource type="Texture2D" uid="uid://dacvrokh3jmgl" path="res://assets/sprites/objetos/flecha_izquierda.png" id="3_c120q"]
+[ext_resource type="Texture2D" uid="uid://diwgvop5hcuox" path="res://assets/ui/Artboard 13 copy 3.png" id="4_f01c5"]
+
+[node name="Historia5" type="Node2D"]
+script = ExtResource("1_p1i0o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_p1i0o")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/TextureRect"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 541.0
+offset_right = 106.0
+offset_bottom = 611.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_c120q")
+flat = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect"]
+layout_mode = 0
+offset_left = 1049.0
+offset_top = 545.0
+offset_right = 1367.0
+offset_bottom = 872.0
+scale = Vector2(0.189721, 0.182314)
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/TextureRect/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("4_f01c5")
+flat = true
+
+[connection signal="pressed" from="CanvasLayer/Control/TextureRect/MarginContainer/HBoxContainer/Button" to="." method="_on_historia5_atras"]
+[connection signal="pressed" from="CanvasLayer/Control/TextureRect/HBoxContainer/Button" to="." method="_on_historia5_adelante"]
