@@ -22,23 +22,22 @@ func _on_flecha_derecha_pressed():
 	
 
 
-var paleta_movida := false  # para saber si ya fue movida
+var paleta_movida := false  
 
 func _on_paleta_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if not paleta_movida:
-			# Aquí iría tu código para moverla o escalarla
+		
 			print("Paleta movida")
-			$UI/Control/Paleta.position = Vector2(44, 84) # ejemplo de nueva posición
-			$UI/Control/Paleta.rotation = 0
+			$UI/Control/Background/Paleta.position = Vector2(44, 84) 
+			$UI/Control/Background/Paleta.rotation = 0
 			paleta_movida = true
 		else:
-			# Regresar a la posición inicial
 			print("Paleta regresada a posición inicial")
-			$UI/Control/Paleta.position = Vector2(-47, 304)
-			$UI/Control/Paleta.rotation = 31
-			print($UI/Control/Paleta.position)
-			print($UI/Control/Paleta.rotation)
+			$UI/Control/Background/Paleta.position = Vector2(-47, 304)
+			$UI/Control/Background/Paleta.rotation = 31
+			print($UI/Control/Background/Paleta.position)
+			print($UI/Control/Background/Paleta.rotation)
 			# $UI/Control/Paleta.size = Vector2(441, 415)
 			paleta_movida = false
 

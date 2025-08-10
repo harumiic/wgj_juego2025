@@ -1,14 +1,62 @@
-[gd_scene load_steps=4 format=3 uid="uid://cynctwv5vxhyv"]
+[gd_scene load_steps=4 format=3 uid="uid://beg4nuohtq6ld"]
 
 [ext_resource type="Texture2D" uid="uid://be7xmee4h1qqv" path="res://assets/fondo_pasteleria/FONDO BORRADOR.jpg" id="1_quay6"]
-[ext_resource type="Script" uid="uid://bmivihj0kp3x4" path="res://scripts/second_scene.gd" id="1_wr80a"]
 [ext_resource type="Texture2D" uid="uid://blqduenrgl1i5" path="res://assets/sprites/objetos/pastel-dedo.PNG" id="3_70jnc"]
 
-[node name="second_scene" type="Node2D" node_paths=PackedStringArray("fondo", "pastel_dedo", "pastel_dedo_centro")]
-script = ExtResource("1_wr80a")
+[sub_resource type="GDScript" id="GDScript_70jnc"]
+script/source = "extends Node2D
+
+@export var fondo: TextureRect
+@export var Paleta: TextureRect
+
+var move_amount := 30 # píxeles por click
+var left_limit := 0
+var right_limit := 3840 - 1080  
+
+func _on_flecha_izquierda_pressed():
+	fondo.global_position.x = max(fondo.global_position.x + move_amount, left_limit)
+	
+func _on_flecha_derecha_pressed():
+	fondo.global_position.x = min(fondo.global_position.x - move_amount, left_limit)
+
+
+#func _on_paleta_gui_input(event: InputEvent) -> void: 
+	#if event is InputEventMouseButton and event.pressed:
+		#print ($UI/Control/Paleta)
+		#$UI/Control/Paleta.position = Vector2(44, 84)
+		#$UI/Control/Paleta.rotation = 0
+	
+
+
+
+var paleta_movida := false  # para saber si ya fue movida
+
+func _on_paleta_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if not paleta_movida:
+			# Aquí iría tu código para moverla o escalarla
+			print(\"Paleta movida\")
+			$UI/Control/Paleta.position = Vector2(44, 84) # ejemplo de nueva posición
+			$UI/Control/Paleta.rotation = 0
+			paleta_movida = true
+		else:
+			# Regresar a la posición inicial
+			print(\"Paleta regresada a posición inicial\")
+			$UI/Control/Paleta.position = Vector2(-47, 304)
+			$UI/Control/Paleta.rotation = 31
+			print($UI/Control/Paleta.position)
+			print($UI/Control/Paleta.rotation)
+			# $UI/Control/Paleta.size = Vector2(441, 415)
+			paleta_movida = false
+
+# func _on_paleta_gui_input(event: InputEvent) -> void:
+	# if event is InputEventMouseButton and event.pressed:
+		# $UI/Control/Paleta.size *= Vector2(1.2, 1.2) 
+"
+
+[node name="second_scene" type="Node2D" node_paths=PackedStringArray("fondo")]
+script = SubResource("GDScript_70jnc")
 fondo = NodePath("UI/Control/Background")
-pastel_dedo = NodePath("UI/Control/Background/pastel_dedo")
-pastel_dedo_centro = NodePath("UI/Control/pastel_dedo_centro")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
