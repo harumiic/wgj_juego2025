@@ -163,7 +163,7 @@ func _on_leche_sangre(event: InputEvent):
 				print("Stopped early: 3 misses")
 				await get_tree().create_timer(4).timeout
 				get_tree().change_scene_to_file("res://scenes/GameOver.tscn")
-				break
+				return
 				
 		miss_count=0
 		
@@ -216,7 +216,7 @@ func _on_cupcake_ojo(event: InputEvent):
 				print("Stopped early: 3 misses")
 				await get_tree().create_timer(4).timeout
 				get_tree().change_scene_to_file("res://scenes/GameOver.tscn")
-				break
+				return
 				
 		miss_count=0
 		
