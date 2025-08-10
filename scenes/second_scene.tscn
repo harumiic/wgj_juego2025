@@ -1,14 +1,60 @@
-[gd_scene load_steps=4 format=3 uid="uid://cynctwv5vxhyv"]
+[gd_scene load_steps=12 format=3 uid="uid://cynctwv5vxhyv"]
 
 [ext_resource type="Texture2D" uid="uid://be7xmee4h1qqv" path="res://assets/fondo_pasteleria/FONDO BORRADOR.jpg" id="1_quay6"]
 [ext_resource type="Script" uid="uid://bmivihj0kp3x4" path="res://scripts/second_scene.gd" id="1_wr80a"]
 [ext_resource type="Texture2D" uid="uid://blqduenrgl1i5" path="res://assets/sprites/objetos/pastel-dedo.PNG" id="3_70jnc"]
+[ext_resource type="Texture2D" uid="uid://dacvrokh3jmgl" path="res://assets/sprites/objetos/flecha_izquierda.png" id="4_3lxov"]
+[ext_resource type="Texture2D" uid="uid://b4mmtd6gj2qke" path="res://assets/sprites/objetos/flecha_derecha.png" id="4_d71sn"]
+[ext_resource type="Texture2D" uid="uid://c85sw2q15uswf" path="res://assets/sprites/objetos/paleta.png" id="4_srtn1"]
+[ext_resource type="Texture2D" uid="uid://cmom0pc48rl2f" path="res://assets/sprites/objetos/fondo_vidas.png" id="6_kvnfp"]
+[ext_resource type="Texture2D" uid="uid://cih0weu63pfff" path="res://assets/ui/circulos.png" id="7_2rwyg"]
 
-[node name="second_scene" type="Node2D" node_paths=PackedStringArray("fondo", "pastel_dedo", "pastel_dedo_centro")]
+[sub_resource type="Animation" id="Animation_wjyo4"]
+resource_name = "hacer_pequeño"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.03333, 2.03333, 3, 4.06667, 5.03333, 6, 7.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_2egt0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_afim2"]
+_data = {
+&"RESET": SubResource("Animation_2egt0"),
+&"hacer_pequeño": SubResource("Animation_wjyo4")
+}
+
+[node name="second_scene" type="Node2D" node_paths=PackedStringArray("fondo", "Paleta", "pastel_dedo", "pastel_dedo_centro", "vidas", "flecha_derecha", "flecha_izquierda")]
 script = ExtResource("1_wr80a")
 fondo = NodePath("UI/Control/Background")
+Paleta = NodePath("UI/Control/paleta")
 pastel_dedo = NodePath("UI/Control/Background/pastel_dedo")
 pastel_dedo_centro = NodePath("UI/Control/pastel_dedo_centro")
+vidas = NodePath("UI/Control/vidas")
+flecha_derecha = NodePath("UI/Control/flecha_derecha")
+flecha_izquierda = NodePath("UI/Control/flecha_izquierda")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -49,7 +95,7 @@ offset_bottom = 500.0
 texture = ExtResource("3_70jnc")
 expand_mode = 2
 
-[node name="flecha_derecha" type="Button" parent="UI/Control"]
+[node name="flecha_derecha" type="TextureButton" parent="UI/Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.215
@@ -60,8 +106,9 @@ offset_right = 878.32
 offset_bottom = 238.376
 toggle_mode = true
 button_pressed = true
+texture_normal = ExtResource("4_d71sn")
 
-[node name="flecha_izquierda" type="Button" parent="UI/Control"]
+[node name="flecha_izquierda" type="TextureButton" parent="UI/Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.204
@@ -72,6 +119,17 @@ offset_right = -148.008
 offset_bottom = 228.768
 toggle_mode = true
 button_pressed = true
+texture_normal = ExtResource("4_3lxov")
+
+[node name="paleta" type="TextureRect" parent="UI/Control"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 346.0
+offset_right = 374.0
+offset_bottom = 690.0
+rotation = 0.502655
+texture = ExtResource("4_srtn1")
+expand_mode = 1
 
 [node name="pastel_dedo_centro" type="TextureRect" parent="UI/Control"]
 visible = false
@@ -82,6 +140,119 @@ offset_right = 916.0
 offset_bottom = 638.0
 texture = ExtResource("3_70jnc")
 expand_mode = 1
+
+[node name="circulos4" type="Sprite2D" parent="UI/Control/pastel_dedo_centro"]
+texture_filter = 1
+position = Vector2(359, 280)
+scale = Vector2(0.261364, 0.261364)
+texture = ExtResource("7_2rwyg")
+centered = false
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Control/pastel_dedo_centro/circulos4"]
+root_node = NodePath("../../circulos4")
+libraries = {
+&"": SubResource("AnimationLibrary_afim2")
+}
+speed_scale = 15.0
+
+[node name="circulos5" type="Sprite2D" parent="UI/Control/pastel_dedo_centro"]
+texture_filter = 1
+position = Vector2(283, 222)
+scale = Vector2(0.21875, 0.21875)
+texture = ExtResource("7_2rwyg")
+centered = false
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Control/pastel_dedo_centro/circulos5"]
+root_node = NodePath("../../circulos4")
+libraries = {
+&"": SubResource("AnimationLibrary_afim2")
+}
+speed_scale = 15.0
+
+[node name="circulos6" type="Sprite2D" parent="UI/Control/pastel_dedo_centro"]
+texture_filter = 1
+position = Vector2(99, 426)
+scale = Vector2(0.170455, 0.170455)
+texture = ExtResource("7_2rwyg")
+centered = false
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Control/pastel_dedo_centro/circulos6"]
+root_node = NodePath("../../circulos4")
+libraries = {
+&"": SubResource("AnimationLibrary_afim2")
+}
+speed_scale = 15.0
+
+[node name="circulos7" type="Sprite2D" parent="UI/Control/pastel_dedo_centro"]
+texture_filter = 1
+position = Vector2(366, 399)
+scale = Vector2(0.139205, 0.139205)
+texture = ExtResource("7_2rwyg")
+centered = false
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Control/pastel_dedo_centro/circulos7"]
+root_node = NodePath("../../circulos4")
+libraries = {
+&"": SubResource("AnimationLibrary_afim2")
+}
+speed_scale = 15.0
+
+[node name="circulos3" type="Sprite2D" parent="UI/Control/pastel_dedo_centro"]
+texture_filter = 1
+position = Vector2(147, 308)
+scale = Vector2(0.286932, 0.286932)
+texture = ExtResource("7_2rwyg")
+centered = false
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Control/pastel_dedo_centro/circulos3"]
+root_node = NodePath("../../circulos3")
+libraries = {
+&"": SubResource("AnimationLibrary_afim2")
+}
+speed_scale = 15.0
+
+[node name="circulos2" type="Sprite2D" parent="UI/Control/pastel_dedo_centro"]
+texture_filter = 1
+position = Vector2(380, 102)
+scale = Vector2(0.308239, 0.308239)
+texture = ExtResource("7_2rwyg")
+centered = false
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Control/pastel_dedo_centro/circulos2"]
+root_node = NodePath("../../circulos2")
+libraries = {
+&"": SubResource("AnimationLibrary_afim2")
+}
+speed_scale = 15.0
+
+[node name="circulos1" type="Sprite2D" parent="UI/Control/pastel_dedo_centro"]
+texture_filter = 1
+position = Vector2(93, 91)
+scale = Vector2(0.420455, 0.420455)
+texture = ExtResource("7_2rwyg")
+centered = false
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Control/pastel_dedo_centro/circulos1"]
+libraries = {
+&"": SubResource("AnimationLibrary_afim2")
+}
+speed_scale = 15.0
+
+[node name="vidas" type="TextureRect" parent="UI/Control"]
+visible = false
+layout_mode = 0
+offset_left = 868.0
+offset_top = 60.0
+offset_right = 1056.0
+offset_bottom = 120.0
+texture = ExtResource("6_kvnfp")
 
 [connection signal="gui_input" from="UI/Control/Background/pastel_dedo" to="." method="_on_pastel_dedo"]
 [connection signal="pressed" from="UI/Control/flecha_derecha" to="." method="_on_flecha_derecha_pressed"]

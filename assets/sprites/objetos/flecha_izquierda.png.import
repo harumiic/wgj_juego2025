@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnoobfgah4cvn"
-path="res://.godot/imported/CIRCULO MOVIBLE.png-8b6d2e764f1c5d550350b60011d45d22.ctex"
+uid="uid://dacvrokh3jmgl"
+path="res://.godot/imported/flecha_izquierda.png-8c73f91ac71208efd47efd8bebdfdbbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/CIRCULO MOVIBLE.png"
-dest_files=["res://.godot/imported/CIRCULO MOVIBLE.png-8b6d2e764f1c5d550350b60011d45d22.ctex"]
+source_file="res://assets/sprites/objetos/flecha_izquierda.png"
+dest_files=["res://.godot/imported/flecha_izquierda.png-8c73f91ac71208efd47efd8bebdfdbbc.ctex"]
 
 [params]
 

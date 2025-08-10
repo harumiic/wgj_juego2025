@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dydsi32cgpi7g"
-path="res://.godot/imported/CIRCULO QUIETO.png-ce9fcec09552208a8de79962a132762c.ctex"
+uid="uid://c85sw2q15uswf"
+path="res://.godot/imported/paleta.png-791266c75c75c99f22e4608d2a247bff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/CIRCULO QUIETO.png"
-dest_files=["res://.godot/imported/CIRCULO QUIETO.png-ce9fcec09552208a8de79962a132762c.ctex"]
+source_file="res://assets/sprites/objetos/paleta.png"
+dest_files=["res://.godot/imported/paleta.png-791266c75c75c99f22e4608d2a247bff.ctex"]
 
 [params]
 

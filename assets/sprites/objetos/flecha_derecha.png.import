@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c85sw2q15uswf"
-path="res://.godot/imported/c3a50d4873695e0ce4d2fe1a97171e1598f9fc99.png-7fbe28e6ba06ece5247dddba8388ba6f.ctex"
+uid="uid://b4mmtd6gj2qke"
+path="res://.godot/imported/flecha_derecha.png-7c0f863685c9700c4b33b4603a8f6e99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/objetos/c3a50d4873695e0ce4d2fe1a97171e1598f9fc99.png"
-dest_files=["res://.godot/imported/c3a50d4873695e0ce4d2fe1a97171e1598f9fc99.png-7fbe28e6ba06ece5247dddba8388ba6f.ctex"]
+source_file="res://assets/sprites/objetos/flecha_derecha.png"
+dest_files=["res://.godot/imported/flecha_derecha.png-7c0f863685c9700c4b33b4603a8f6e99.ctex"]
 
 [params]
 
