@@ -22,7 +22,6 @@ func _on_flecha_derecha_pressed():
 	
 
 
-
 var paleta_movida := false  # para saber si ya fue movida
 
 func _on_paleta_gui_input(event: InputEvent) -> void:
