@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://beg4nuohtq6ld"]
+[gd_scene load_steps=4 format=3 uid="uid://beg4nuohtq6ld"]
 
 [ext_resource type="Texture2D" uid="uid://be7xmee4h1qqv" path="res://assets/fondo_pasteleria/FONDO BORRADOR.jpg" id="1_quay6"]
-[ext_resource type="Script" uid="uid://bmivihj0kp3x4" path="res://scenes/second_scene.gd" id="1_wr80a"]
+[ext_resource type="Script" uid="uid://bmivihj0kp3x4" path="res://scripts/second_scene.gd" id="1_wr80a"]
+[ext_resource type="Texture2D" uid="uid://c85sw2q15uswf" path="res://assets/sprites/objetos/c3a50d4873695e0ce4d2fe1a97171e1598f9fc99.png" id="3_70jnc"]
 
 [node name="second_scene" type="Node2D" node_paths=PackedStringArray("fondo")]
 script = ExtResource("1_wr80a")
@@ -28,14 +29,28 @@ anchor_right = 1.091
 anchor_bottom = 0.536
 offset_left = -317.7
 offset_top = -84.36
-offset_right = 1174.17
-offset_bottom = 281.032
+offset_right = 1174.35
+offset_bottom = 314.536
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_quay6")
 expand_mode = 3
 stretch_mode = 4
 flip_h = true
+
+[node name="Paleta" type="TextureRect" parent="UI/Control"]
+layout_mode = 0
+offset_right = 441.0
+offset_bottom = 415.0
+rotation = 0.547822
+mouse_filter = 0
+texture = ExtResource("3_70jnc")
+expand_mode = 2
+
+[node name="Control" type="Control" parent="UI/Control/Paleta"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="flecha_derecha" type="Button" parent="UI/Control"]
 layout_mode = 1
@@ -63,5 +78,7 @@ button_pressed = true
 
 [node name="Sprite2D" type="Sprite2D" parent="UI/Control"]
 
+[connection signal="gui_input" from="UI/Control/Paleta" to="." method="_on_paleta_gui_input"]
+[connection signal="gui_input" from="UI/Control/Paleta/Control" to="." method="_on_control_gui_input"]
 [connection signal="pressed" from="UI/Control/flecha_derecha" to="." method="_on_flecha_derecha_pressed"]
 [connection signal="pressed" from="UI/Control/flecha_izquierda" to="." method="_on_flecha_izquierda_pressed"]
