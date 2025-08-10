@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxl4k2r6unsa6"]
+
+[ext_resource type="Texture2D" uid="uid://cxujfwrsl0rp3" path="res://assets/sprites/My Neighbor Totoro.png" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://b5l7m0etp82dm" path="res://scripts/ui.gd" id="1_uu6xs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glv2v"]
+
+[node name="Main" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uu6xs")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_glv2v")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Button" type="Button" parent="CanvasLayer/UI/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_glv2v")
+text = "Comenzar"
+
+[node name="Button2" type="Button" parent="CanvasLayer/UI/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button3" type="Button" parent="CanvasLayer/UI/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="CanvasLayer/UI/MarginContainer/HBoxContainer/Button" to="CanvasLayer/UI" method="_on_button_pressed"]

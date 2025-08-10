@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxujfwrsl0rp3"
-path="res://.godot/imported/My Neighbor Totoro.png-14bd0675b16e5f5acd1d7aaf35bbb16f.ctex"
+uid="uid://c85sw2q15uswf"
+path="res://.godot/imported/c3a50d4873695e0ce4d2fe1a97171e1598f9fc99.png-7fbe28e6ba06ece5247dddba8388ba6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/My Neighbor Totoro.png"
-dest_files=["res://.godot/imported/My Neighbor Totoro.png-14bd0675b16e5f5acd1d7aaf35bbb16f.ctex"]
+source_file="res://assets/sprites/objetos/c3a50d4873695e0ce4d2fe1a97171e1598f9fc99.png"
+dest_files=["res://.godot/imported/c3a50d4873695e0ce4d2fe1a97171e1598f9fc99.png-7fbe28e6ba06ece5247dddba8388ba6f.ctex"]
 
 [params]
 
