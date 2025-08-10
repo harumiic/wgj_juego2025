@@ -26,10 +26,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = -1.0
-offset_right = 1.0
-offset_bottom = -1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 2.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_uu6xs")
@@ -56,8 +56,8 @@ flat = true
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/UI/TextureRect"]
 layout_mode = 0
 offset_left = 62.0
-offset_top = 326.0
-offset_right = 212.0
+offset_top = 325.0
+offset_right = 215.0
 offset_bottom = 413.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/TextureRect/MarginContainer2"]
@@ -66,6 +66,18 @@ layout_mode = 2
 [node name="Credits" type="Button" parent="CanvasLayer/UI/TextureRect/MarginContainer2/HBoxContainer"]
 layout_mode = 2
 button_mask = 0
+icon = ExtResource("4_fos0i")
+flat = true
+
+[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/UI/TextureRect/MarginContainer2"]
+clip_contents = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/TextureRect/MarginContainer2/MarginContainer4"]
+layout_mode = 2
+
+[node name="credits2" type="Button" parent="CanvasLayer/UI/TextureRect/MarginContainer2/MarginContainer4/HBoxContainer"]
+layout_mode = 2
 icon = ExtResource("4_fos0i")
 flat = true
 
@@ -123,4 +135,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer/HBoxContainer/Play" to="CanvasLayer/UI" method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer2/HBoxContainer/Credits" to="CanvasLayer/UI" method="_on_credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer2/MarginContainer4/HBoxContainer/credits2" to="CanvasLayer/UI" method="_on_credits_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer3/HBoxContainer/Quit" to="CanvasLayer/UI" method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/MarginContainer/HBoxContainer/Button" to="CanvasLayer/UI" method="_on_button_pressed"]
