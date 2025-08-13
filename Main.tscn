@@ -34,67 +34,35 @@ texture = ExtResource("2_uu6xs")
 expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/TextureRect"]
-custom_minimum_size = Vector2(65, 90)
 layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 0.031
-offset_left = 65.0
-offset_top = 269.0
-offset_right = 166.0
-offset_bottom = 338.912
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -137.0
+offset_right = 192.0
+grow_vertical = 0
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_bottom = 200
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/TextureRect/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/TextureRect/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="Play" type="Button" parent="CanvasLayer/UI/TextureRect/MarginContainer/HBoxContainer"]
+[node name="Play" type="Button" parent="CanvasLayer/UI/TextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 icon = ExtResource("3_r0du0")
 flat = true
 
-[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/UI/TextureRect"]
-layout_mode = 0
-offset_left = 62.0
-offset_top = 325.0
-offset_right = 215.0
-offset_bottom = 413.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/TextureRect/MarginContainer2"]
-layout_mode = 2
-
-[node name="Credits" type="Button" parent="CanvasLayer/UI/TextureRect/MarginContainer2/HBoxContainer"]
-layout_mode = 2
-button_mask = 0
-icon = ExtResource("4_fos0i")
-flat = true
-
-[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/UI/TextureRect/MarginContainer2"]
-clip_contents = true
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/TextureRect/MarginContainer2/MarginContainer4"]
-layout_mode = 2
-
-[node name="credits2" type="Button" parent="CanvasLayer/UI/TextureRect/MarginContainer2/MarginContainer4/HBoxContainer"]
+[node name="credits2" type="Button" parent="CanvasLayer/UI/TextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 icon = ExtResource("4_fos0i")
 flat = true
 
-[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/UI/TextureRect"]
-layout_mode = 0
-offset_left = 61.0
-offset_top = 402.0
-offset_right = 224.0
-offset_bottom = 461.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/TextureRect/MarginContainer3"]
-layout_mode = 2
-
-[node name="Quit" type="Button" parent="CanvasLayer/UI/TextureRect/MarginContainer3/HBoxContainer"]
+[node name="Quit" type="Button" parent="CanvasLayer/UI/TextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 icon = ExtResource("5_3dxm6")
 flat = true
 
-[connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer/HBoxContainer/Play" to="CanvasLayer/UI" method="_on_play_pressed"]
-[connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer2/HBoxContainer/Credits" to="CanvasLayer/UI" method="_on_credits_pressed"]
-[connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer2/MarginContainer4/HBoxContainer/credits2" to="CanvasLayer/UI" method="_on_credits_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer3/HBoxContainer/Quit" to="CanvasLayer/UI" method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer/VBoxContainer/Play" to="CanvasLayer/UI" method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer/VBoxContainer/credits2" to="CanvasLayer/UI" method="_on_credits_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer/VBoxContainer/Quit" to="CanvasLayer/UI" method="_on_quit_pressed"]

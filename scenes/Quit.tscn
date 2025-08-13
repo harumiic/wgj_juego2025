@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cbxra5n6rylq6" path="res://assets/ui/Frame 50.png" id="3_6fh4c"]
 [ext_resource type="Script" uid="uid://bhnl5k7xe56m4" path="res://scenes/button.gd" id="4_6rl8r"]
 [ext_resource type="Texture2D" uid="uid://dtab18tikmg58" path="res://assets/ui/Frame 49.png" id="5_2cut7"]
-[ext_resource type="Script" uid="uid://q86jlm71k1ne" path="res://scenes/button_2.gd" id="6_cvcxn"]
+[ext_resource type="Script" path="res://scenes/button_2.gd" id="6_cvcxn"]
 [ext_resource type="Texture2D" uid="uid://bxyasoxsmdgl7" path="res://assets/sprites/objetos/Artboard 13.png" id="7_cvcxn"]
 
 [node name="Quit" type="Node2D"]
@@ -14,16 +14,22 @@
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
 self_modulate = Color(0.662745, 0.34902, 0.34902, 0.54902)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_r5cbm")
+expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/TextureRect"]
 layout_mode = 0

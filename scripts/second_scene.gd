@@ -29,21 +29,15 @@ extends Node2D
 
 
 var move_amount := 30 # píxeles por click
-var left_limit := 0
-var right_limit := 1152
 
 func _on_flecha_izquierda_pressed():
+	print("on izquierda")
 	fondo.global_position.x = min(fondo.global_position.x + move_amount,0)
 	
 func _on_flecha_derecha_pressed():
-	fondo.global_position.x = max(fondo.global_position.x - move_amount,-1152)
-
-
-#func _on_paleta_gui_input(event: InputEvent) -> void: 
-	#if event is InputEventMouseButton and event.pressed:
-		#print ($UI/Control/Paleta)
-		#$UI/Control/Paleta.position = Vector2(44, 84)
-		#$UI/Control/Paleta.rotation = 0
+	var window_size = DisplayServer.window_get_size()
+	print("on derecha")
+	fondo.global_position.x = max(fondo.global_position.x - move_amount,-window_size.x)
 	
 var paleta_movida := false  # para saber si ya fue movida
 
@@ -72,6 +66,7 @@ func _on_paleta_gui_input(event: InputEvent) -> void:
 
 var clicked := false
 func _on_pastel_dedo(event: InputEvent):
+	print("on pastel")
 	if event is InputEventMouseButton and event.pressed:
 		pastel_dedo_centro.visible = true
 		vidas.visible = true

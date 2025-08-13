@@ -14,3 +14,8 @@ config/name="wgj2025"
 run/main_scene="uid://bxl4k2r6unsa6"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
