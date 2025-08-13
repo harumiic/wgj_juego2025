@@ -8,4 +8,3 @@ func _on_ganaste_pressed():
 
 func _on_main_pressed():
 	get_tree().change_scene_to_file("res://Main.tscn")
-	

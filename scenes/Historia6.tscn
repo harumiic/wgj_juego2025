@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp0f6mguesgkw"]
+[gd_scene load_steps=3 format=3 uid="uid://dp0f6mguesgkw"]
 
 [ext_resource type="Script" uid="uid://dtpdenvwuewc3" path="res://scenes/historia_6.gd" id="1_5j076"]
 [ext_resource type="Texture2D" uid="uid://bk3028iufdy54" path="res://assets/fondo_pasteleria/Historia6.png" id="2_653ve"]
-[ext_resource type="Texture2D" uid="uid://dacvrokh3jmgl" path="res://assets/sprites/objetos/flecha_izquierda.png" id="3_0td7s"]
-[ext_resource type="Texture2D" uid="uid://diwgvop5hcuox" path="res://assets/ui/Artboard 13 copy 3.png" id="4_1nuga"]
 
 [node name="Historia6" type="Node2D"]
 script = ExtResource("1_5j076")
@@ -12,43 +10,69 @@ script = ExtResource("1_5j076")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_653ve")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/TextureRect"]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 541.0
-offset_right = 106.0
-offset_bottom = 611.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.041
+anchor_top = 0.849
+anchor_right = 0.958
+anchor_bottom = 0.929
+offset_top = 2.84796
+offset_right = 0.383911
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/MarginContainer"]
+[node name="Button2" type="Button" parent="CanvasLayer/Control/TextureRect/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-
-[node name="Button" type="Button" parent="CanvasLayer/Control/TextureRect/MarginContainer/HBoxContainer"]
-layout_mode = 2
-icon = ExtResource("3_0td7s")
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
 flat = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect"]
-layout_mode = 0
-offset_left = 1049.0
-offset_top = 545.0
-offset_right = 1367.0
-offset_bottom = 872.0
-scale = Vector2(0.189721, 0.182314)
-
-[node name="Button" type="Button" parent="CanvasLayer/Control/TextureRect/HBoxContainer"]
+[node name="Control2" type="Control" parent="CanvasLayer/Control/TextureRect/HBoxContainer2"]
 layout_mode = 2
-icon = ExtResource("4_1nuga")
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 11.0
+
+[node name="Control" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.7
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control/TextureRect/HBoxContainer2/Control"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 flat = true
 
-[connection signal="pressed" from="CanvasLayer/Control/TextureRect/MarginContainer/HBoxContainer/Button" to="." method="_on_historia6_atras"]
-[connection signal="pressed" from="CanvasLayer/Control/TextureRect/HBoxContainer/Button" to="." method="on_historia6_adelante"]
+[node name="AspectRatioContainer" type="Control" parent="CanvasLayer/Control/TextureRect/HBoxContainer2/Control"]
+custom_minimum_size = Vector2(2, 2)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.36
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/TextureRect/HBoxContainer2/Control"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+
+[connection signal="pressed" from="CanvasLayer/Control/TextureRect/HBoxContainer2/Button2" to="." method="_on_historia6_atras"]
+[connection signal="pressed" from="CanvasLayer/Control/TextureRect/HBoxContainer2/Control/Button" to="." method="on_historia6_adelante"]

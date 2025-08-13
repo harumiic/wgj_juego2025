@@ -67,10 +67,10 @@ _data = {
 [node name="second_scene" type="Node2D" node_paths=PackedStringArray("fondo", "Paleta", "paleta_dedo", "paleta_dedo_sangre", "paleta_dedo_sangre_ojo", "pastel_dedo", "pastel_dedo_centro", "dedo", "leche_sangre_centro", "sangre", "cupcake_ojo_centro", "ojo", "flecha_derecha", "flecha_izquierda", "vidas", "tres_vidas", "dos_vidas", "una_vidas", "blur_background")]
 script = ExtResource("1_2rwyg")
 fondo = NodePath("UI/Control/Background")
-Paleta = NodePath("UI/Control/paleta")
-paleta_dedo = NodePath("UI/Control/paleta/paleta_dedo")
-paleta_dedo_sangre = NodePath("UI/Control/paleta/paleta_dedo_sangre")
-paleta_dedo_sangre_ojo = NodePath("UI/Control/paleta/paleta_dedo_sangre_ojo")
+Paleta = NodePath("UI/Control/MarginContainer/paleta")
+paleta_dedo = NodePath("UI/Control/MarginContainer/paleta_dedo")
+paleta_dedo_sangre = NodePath("UI/Control/MarginContainer/paleta_dedo_sangre")
+paleta_dedo_sangre_ojo = NodePath("UI/Control/MarginContainer/paleta_dedo_sangre_ojo")
 pastel_dedo = NodePath("UI/Control/Background/pastel_dedo/pastel_dedo")
 pastel_dedo_centro = NodePath("UI/Control/pastel_dedo_centro")
 dedo = NodePath("UI/Control/dedo_centro")
@@ -203,49 +203,46 @@ toggle_mode = true
 button_pressed = true
 texture_normal = ExtResource("4_afim2")
 
-[node name="paleta" type="TextureRect" parent="UI/Control"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control"]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.006
-anchor_bottom = 0.981
-offset_left = -18.0
-offset_top = 397.0
-offset_right = -826.9
-offset_bottom = 105.312
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_right = 200.0
 grow_vertical = 0
-rotation = 0.502655
+rotation = 0.628319
+theme_override_constants/margin_left = 30
+
+[node name="paleta" type="TextureRect" parent="UI/Control/MarginContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
 texture = ExtResource("6_5fv4n")
 expand_mode = 1
 
-[node name="paleta_dedo" type="TextureRect" parent="UI/Control/paleta"]
+[node name="paleta_dedo" type="TextureRect" parent="UI/Control/MarginContainer"]
 visible = false
-layout_mode = 0
-offset_left = 50.6886
-offset_top = 2.94485
-offset_right = 307.689
-offset_bottom = 340.945
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
 texture = ExtResource("7_3es0y")
-expand_mode = 1
+expand_mode = 3
+stretch_mode = 5
 
-[node name="paleta_dedo_sangre" type="TextureRect" parent="UI/Control/paleta"]
+[node name="paleta_dedo_sangre" type="TextureRect" parent="UI/Control/MarginContainer"]
 visible = false
-layout_mode = 0
-offset_left = 50.6886
-offset_top = 2.94485
-offset_right = 307.689
-offset_bottom = 340.945
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
 texture = ExtResource("10_jpu58")
-expand_mode = 1
+expand_mode = 3
+stretch_mode = 5
 
-[node name="paleta_dedo_sangre_ojo" type="TextureRect" parent="UI/Control/paleta"]
+[node name="paleta_dedo_sangre_ojo" type="TextureRect" parent="UI/Control/MarginContainer"]
 visible = false
-layout_mode = 0
-offset_left = 50.6886
-offset_top = 2.94485
-offset_right = 307.689
-offset_bottom = 340.945
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
 texture = ExtResource("11_qnjof")
-expand_mode = 1
+expand_mode = 3
+stretch_mode = 5
 
 [node name="pastel_dedo_centro" type="TextureRect" parent="UI/Control"]
 visible = false

@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://owsjrckev7ii"]
+[gd_scene load_steps=3 format=3 uid="uid://owsjrckev7ii"]
 
 [ext_resource type="Script" uid="uid://b64j81wrybf2p" path="res://scenes/gameplay.gd" id="1_diuee"]
 [ext_resource type="Texture2D" uid="uid://dk0dlytbpb4t1" path="res://assets/fondo_pasteleria/Ganaste.png" id="2_diuee"]
-[ext_resource type="Script" uid="uid://bhnl5k7xe56m4" path="res://scenes/button.gd" id="3_rkc3e"]
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource("1_diuee")
@@ -11,25 +10,38 @@ script = ExtResource("1_diuee")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 1153.0
-offset_bottom = 650.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_diuee")
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/TextureRect"]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 860.0
-offset_top = 544.0
-offset_right = 1108.0
-offset_bottom = 610.0
-script = ExtResource("3_rkc3e")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.046
+anchor_top = 0.864
+anchor_right = 0.085
+anchor_bottom = 0.909
+offset_top = 0.127991
 
-[connection signal="pressed" from="CanvasLayer/Control/TextureRect/Button" to="." method="_on_main_pressed"]
+[node name="Button2" type="Button" parent="CanvasLayer/Control/TextureRect"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.762
+anchor_top = 0.839
+anchor_right = 0.962
+anchor_bottom = 0.928
+
+[connection signal="pressed" from="CanvasLayer/Control/TextureRect/Button2" to="." method="_on_main_pressed"]
