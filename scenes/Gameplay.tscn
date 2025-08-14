@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://6lhd8vyq3j3m"]
+
+[ext_resource type="Script" uid="uid://b64j81wrybf2p" path="res://scenes/gameplay.gd" id="1_75vxi"]
+[ext_resource type="Texture2D" uid="uid://durx4t6tvoiku" path="res://assets/fondo_pasteleria/Gameplay (1).png" id="2_5sdaa"]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource("1_75vxi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5sdaa")
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.337
+anchor_top = 0.576
+anchor_right = 0.665
+anchor_bottom = 0.646
+offset_left = -0.223999
+offset_top = -0.248016
+offset_right = -343.08
+scale = Vector2(11.0457, 1.57615)
+flat = true
+
+[connection signal="pressed" from="CanvasLayer/Control/TextureRect/Button" to="." method="_on_button_pressed"]

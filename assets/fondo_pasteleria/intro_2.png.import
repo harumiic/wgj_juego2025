@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1l7byaumjlra"
-path="res://.godot/imported/dedo.png-53380f67e1dcfa75c75aebecf3f8b749.ctex"
+uid="uid://c305835pcb4il"
+path="res://.godot/imported/intro_2.png-b8117a8e2e2e880ccce3bb918b05aed6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/objetos/dedo.png"
-dest_files=["res://.godot/imported/dedo.png-53380f67e1dcfa75c75aebecf3f8b749.ctex"]
+source_file="res://assets/fondo_pasteleria/intro_2.png"
+dest_files=["res://.godot/imported/intro_2.png-b8117a8e2e2e880ccce3bb918b05aed6.ctex"]
 
 [params]
 

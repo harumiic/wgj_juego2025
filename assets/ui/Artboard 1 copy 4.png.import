@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1l7byaumjlra"
-path="res://.godot/imported/dedo.png-53380f67e1dcfa75c75aebecf3f8b749.ctex"
+uid="uid://ds055a4s3tobs"
+path="res://.godot/imported/Artboard 1 copy 4.png-ea3f14673ba0e4089426c113949aeb60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/objetos/dedo.png"
-dest_files=["res://.godot/imported/dedo.png-53380f67e1dcfa75c75aebecf3f8b749.ctex"]
+source_file="res://assets/ui/Artboard 1 copy 4.png"
+dest_files=["res://.godot/imported/Artboard 1 copy 4.png-ea3f14673ba0e4089426c113949aeb60.ctex"]
 
 [params]
 

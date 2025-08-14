@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://chnw3gihij020"]
+
+[ext_resource type="Texture2D" uid="uid://ctf5fcyemm0l" path="res://assets/sprites/Menu.png" id="1_r5cbm"]
+[ext_resource type="Texture2D" uid="uid://c4hcj7xi668n8" path="res://assets/ui/Group 10.png" id="2_6fh4c"]
+[ext_resource type="Texture2D" uid="uid://cbxra5n6rylq6" path="res://assets/ui/Frame 50.png" id="3_6fh4c"]
+[ext_resource type="Script" uid="uid://bhnl5k7xe56m4" path="res://scenes/button.gd" id="4_6rl8r"]
+[ext_resource type="Texture2D" uid="uid://dtab18tikmg58" path="res://assets/ui/Frame 49.png" id="5_2cut7"]
+[ext_resource type="Script" path="res://scenes/button_2.gd" id="6_cvcxn"]
+[ext_resource type="Texture2D" uid="uid://bxyasoxsmdgl7" path="res://assets/sprites/objetos/Artboard 13.png" id="7_cvcxn"]
+
+[node name="Quit" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+self_modulate = Color(0.662745, 0.34902, 0.34902, 0.54902)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_r5cbm")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/TextureRect"]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 197.0
+offset_right = 884.0
+offset_bottom = 510.0
+
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 213.0
+offset_right = 833.0
+offset_bottom = 433.0
+icon = ExtResource("2_6fh4c")
+flat = true
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/Button"]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 120.0
+offset_right = 415.0
+offset_bottom = 157.0
+icon = ExtResource("3_6fh4c")
+flat = true
+script = ExtResource("4_6rl8r")
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/Button"]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 120.0
+offset_right = 284.0
+offset_bottom = 157.0
+icon = ExtResource("5_2cut7")
+flat = true
+script = ExtResource("6_cvcxn")
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control/Button"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 31.0
+offset_right = 787.0
+offset_bottom = 418.0
+scale = Vector2(0.118921, 0.110479)
+icon = ExtResource("7_cvcxn")
+flat = true
+
+[connection signal="pressed" from="CanvasLayer/Control/Button/Button" to="CanvasLayer/Control/Button/Button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Button/Button2" to="CanvasLayer/Control/Button/Button" method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Button/Button3" to="CanvasLayer/Control/Button/Button" method="_on_button_3_pressed"]

@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://bccvssk46ll2w"]
+
+[ext_resource type="Texture2D" uid="uid://7apye1bab5gx" path="res://assets/fondo_pasteleria/Historia4.png" id="1_77cob"]
+[ext_resource type="Script" uid="uid://bsi8ch7p44pmo" path="res://scenes/historia_4.gd" id="1_pnonp"]
+
+[node name="Historia4" type="Node2D"]
+script = ExtResource("1_pnonp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_77cob")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.041
+anchor_top = 0.849
+anchor_right = 0.958
+anchor_bottom = 0.929
+offset_top = 2.84796
+offset_right = 0.383911
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/TextureRect/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+flat = true
+
+[node name="Control2" type="Control" parent="CanvasLayer/Control/TextureRect/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 11.0
+
+[node name="Control" type="HBoxContainer" parent="CanvasLayer/Control/TextureRect/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.7
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control/TextureRect/HBoxContainer2/Control"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+flat = true
+
+[node name="AspectRatioContainer" type="Control" parent="CanvasLayer/Control/TextureRect/HBoxContainer2/Control"]
+custom_minimum_size = Vector2(2, 2)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.36
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/TextureRect/HBoxContainer2/Control"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+
+[connection signal="pressed" from="CanvasLayer/Control/TextureRect/HBoxContainer2/Button2" to="." method="_on_historia4_atras"]
+[connection signal="pressed" from="CanvasLayer/Control/TextureRect/HBoxContainer2/Control/Button" to="." method="_on_historia4_adelante"]
