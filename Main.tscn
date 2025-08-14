@@ -65,4 +65,3 @@ flat = true
 
 [connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer/VBoxContainer/Play" to="CanvasLayer/UI" method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer/VBoxContainer/credits2" to="CanvasLayer/UI" method="_on_credits_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/UI/TextureRect/MarginContainer/VBoxContainer/Quit" to="CanvasLayer/UI" method="_on_quit_pressed"]

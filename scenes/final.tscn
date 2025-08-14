@@ -1,21 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmangn85pcs4x"]
+[gd_scene load_steps=5 format=3 uid="uid://bmangn85pcs4x"]
 
 [ext_resource type="Script" uid="uid://b64j81wrybf2p" path="res://scenes/gameplay.gd" id="1_op64y"]
+[ext_resource type="Script" uid="uid://cnef73qt14td" path="res://scripts/win.gd" id="2_gh6hq"]
 [ext_resource type="Texture2D" uid="uid://88quiv7i0ttc" path="res://assets/fondo_pasteleria/final.png" id="2_op64y"]
-[ext_resource type="Script" uid="uid://bhnl5k7xe56m4" path="res://scenes/button.gd" id="3_y0die"]
+[ext_resource type="AudioStream" uid="uid://gt8s5qakgwfi" path="res://music/004 Kiut and Kawaii Set - Ending -Happy-.wav" id="4_y0die"]
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource("1_op64y")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("win_sound")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_gh6hq")
+win_sound = NodePath("win_sound")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -45,6 +48,9 @@ modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 10
-script = ExtResource("3_y0die")
+
+[node name="win_sound" type="AudioStreamPlayer2D" parent="CanvasLayer/Control"]
+stream = ExtResource("4_y0die")
+volume_db = 5.0
 
 [connection signal="pressed" from="CanvasLayer/Control/TextureRect/HBoxContainer/Button" to="." method="_on_ganaste_pressed"]

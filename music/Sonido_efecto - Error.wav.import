@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bv7ugf1fvy5re"
+path="res://.godot/imported/Sonido_efecto - Error.wav-2279089856cbd3be507eee65b6b6aebe.sample"
+
+[deps]
+
+source_file="res://music/Sonido_efecto - Error.wav"
+dest_files=["res://.godot/imported/Sonido_efecto - Error.wav-2279089856cbd3be507eee65b6b6aebe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

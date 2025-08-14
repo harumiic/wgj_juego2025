@@ -15,6 +15,10 @@ run/main_scene="uid://bxl4k2r6unsa6"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MusicPlayer="*res://scenes/MusicPlayer.tscn"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://gt8s5qakgwfi"
+path="res://.godot/imported/004 Kiut and Kawaii Set - Ending -Happy-.wav-ba35a715eba33be89e2a6359c1b1bbfb.sample"
+
+[deps]
+
+source_file="res://music/004 Kiut and Kawaii Set - Ending -Happy-.wav"
+dest_files=["res://.godot/imported/004 Kiut and Kawaii Set - Ending -Happy-.wav-ba35a715eba33be89e2a6359c1b1bbfb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

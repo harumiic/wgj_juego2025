@@ -27,6 +27,10 @@ extends Node2D
 
 @export var blur_background:TextureRect
 
+@export var error_sound: AudioStreamPlayer2D
+@export var success_sound : AudioStreamPlayer2D
+
+
 
 var move_amount := 30 # píxeles por click
 
@@ -38,30 +42,6 @@ func _on_flecha_derecha_pressed():
 	var window_size = DisplayServer.window_get_size()
 	print("on derecha")
 	fondo.global_position.x = max(fondo.global_position.x - move_amount,-window_size.x)
-	
-var paleta_movida := false  # para saber si ya fue movida
-
-func _on_paleta_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		if not paleta_movida:
-		
-			print("Paleta movida")
-			$UI/Control/Background/Paleta.position = Vector2(44, 84) 
-			$UI/Control/Background/Paleta.rotation = 0
-			paleta_movida = true
-		else:
-			print("Paleta regresada a posición inicial")
-			$UI/Control/Background/Paleta.position = Vector2(-47, 304)
-			$UI/Control/Background/Paleta.rotation = 31
-			print($UI/Control/Background/Paleta.position)
-			print($UI/Control/Background/Paleta.rotation)
-			# $UI/Control/Paleta.size = Vector2(441, 415)
-			paleta_movida = false
-
-
-# func _on_paleta_gui_input(event: InputEvent) -> void:
-	# if event is InputEventMouseButton and event.pressed:
-		# $UI/Control/Paleta.size *= Vector2(1.2, 1.2) 
 
 
 var clicked := false
@@ -90,6 +70,7 @@ func _on_pastel_dedo(event: InputEvent):
 
 			if not clicked:
 				miss_count += 1
+				error_sound.play()
 
 				if miss_count==1:
 					tres_vidas.visible=false
@@ -98,6 +79,8 @@ func _on_pastel_dedo(event: InputEvent):
 				if miss_count==3:
 					una_vidas.visible=false
 				print("Missed:", i)
+			else:
+				success_sound.play()
 
 			circulo.visible = false
 			
@@ -142,6 +125,7 @@ func _on_leche_sangre(event: InputEvent):
 
 			if not clicked:
 				miss_count += 1
+				error_sound.play()
 
 				if miss_count==1:
 					tres_vidas.visible=false
@@ -150,6 +134,8 @@ func _on_leche_sangre(event: InputEvent):
 				if miss_count==3:
 					una_vidas.visible=false
 				print("Missed:", i)
+			else:
+				success_sound.play()
 
 			circulo.visible = false
 			
@@ -195,6 +181,7 @@ func _on_cupcake_ojo(event: InputEvent):
 
 			if not clicked:
 				miss_count += 1
+				error_sound.play()
 
 				if miss_count==1:
 					tres_vidas.visible=false
@@ -203,6 +190,8 @@ func _on_cupcake_ojo(event: InputEvent):
 				if miss_count==3:
 					una_vidas.visible=false
 				print("Missed:", i)
+			else:
+				success_sound.play()
 
 			circulo.visible = false
 			

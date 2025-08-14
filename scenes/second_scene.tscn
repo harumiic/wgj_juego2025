@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cynctwv5vxhyv"]
+[gd_scene load_steps=29 format=3 uid="uid://cynctwv5vxhyv"]
 
 [ext_resource type="Script" uid="uid://bmivihj0kp3x4" path="res://scripts/second_scene.gd" id="1_2rwyg"]
 [ext_resource type="Texture2D" uid="uid://batsud4uio26b" path="res://assets/fondo_pasteleria/fondo.jpg" id="2_8j7et"]
@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://b4mmtd6gj2qke" path="res://assets/sprites/objetos/flecha_derecha.png" id="4_afim2"]
 [ext_resource type="Texture2D" uid="uid://dacvrokh3jmgl" path="res://assets/sprites/objetos/flecha_izquierda.png" id="5_k05yt"]
 [ext_resource type="Texture2D" uid="uid://br8eltqjniwqo" path="res://assets/sprites/objetos/cupcake_ojo.PNG" id="5_u2isd"]
+[ext_resource type="AudioStream" uid="uid://pd0vqnknh37g" path="res://music/Sonido_efecto - Acierto.wav" id="6_2r8qc"]
 [ext_resource type="Texture2D" uid="uid://c85sw2q15uswf" path="res://assets/sprites/objetos/paleta.png" id="6_5fv4n"]
 [ext_resource type="Texture2D" uid="uid://dp5talrviiw28" path="res://assets/sprites/objetos/paleta_dedo.png" id="7_3es0y"]
+[ext_resource type="AudioStream" uid="uid://bv7ugf1fvy5re" path="res://music/Sonido_efecto - Error.wav" id="7_bf4uh"]
 [ext_resource type="Texture2D" uid="uid://c0v1edvrcg6mv" path="res://assets/ui/circulos.png" id="7_gicb4"]
 [ext_resource type="Script" uid="uid://cln2y1jrwvlqh" path="res://scripts/circle_input.gd" id="8_wjyo4"]
 [ext_resource type="Texture2D" uid="uid://1l7byaumjlra" path="res://assets/sprites/objetos/dedo.png" id="9_5fv4n"]
@@ -64,14 +66,14 @@ _data = {
 &"hacer_pequeño": SubResource("Animation_wjyo4")
 }
 
-[node name="second_scene" type="Node2D" node_paths=PackedStringArray("fondo", "Paleta", "paleta_dedo", "paleta_dedo_sangre", "paleta_dedo_sangre_ojo", "pastel_dedo", "pastel_dedo_centro", "dedo", "leche_sangre_centro", "sangre", "cupcake_ojo_centro", "ojo", "flecha_derecha", "flecha_izquierda", "vidas", "tres_vidas", "dos_vidas", "una_vidas", "blur_background")]
+[node name="second_scene" type="Node2D" node_paths=PackedStringArray("fondo", "Paleta", "paleta_dedo", "paleta_dedo_sangre", "paleta_dedo_sangre_ojo", "pastel_dedo", "pastel_dedo_centro", "dedo", "leche_sangre_centro", "sangre", "cupcake_ojo_centro", "ojo", "flecha_derecha", "flecha_izquierda", "vidas", "tres_vidas", "dos_vidas", "una_vidas", "blur_background", "error_sound", "success_sound")]
 script = ExtResource("1_2rwyg")
 fondo = NodePath("UI/Control/Background")
 Paleta = NodePath("UI/Control/MarginContainer/paleta")
 paleta_dedo = NodePath("UI/Control/MarginContainer/paleta_dedo")
 paleta_dedo_sangre = NodePath("UI/Control/MarginContainer/paleta_dedo_sangre")
 paleta_dedo_sangre_ojo = NodePath("UI/Control/MarginContainer/paleta_dedo_sangre_ojo")
-pastel_dedo = NodePath("UI/Control/Background/pastel_dedo/pastel_dedo")
+pastel_dedo = NodePath("UI/Control/Background/pastel_dedo2")
 pastel_dedo_centro = NodePath("UI/Control/pastel_dedo_centro")
 dedo = NodePath("UI/Control/dedo_centro")
 leche_sangre_centro = NodePath("UI/Control/leche_sangre_centro")
@@ -85,6 +87,8 @@ tres_vidas = NodePath("UI/Control/vidas/3_vidas")
 dos_vidas = NodePath("UI/Control/vidas/2_vidas")
 una_vidas = NodePath("UI/Control/vidas/1_vidas")
 blur_background = NodePath("UI/Control/blur-background")
+error_sound = NodePath("UI/Control/error_sound")
+success_sound = NodePath("UI/Control/success_sound")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -107,57 +111,48 @@ texture = ExtResource("2_8j7et")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="pastel_dedo" type="MarginContainer" parent="UI/Control/Background"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -50.0
-offset_top = -50.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_constants/margin_right = 150
-
-[node name="pastel_dedo" type="TextureRect" parent="UI/Control/Background/pastel_dedo"]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-texture = ExtResource("3_2egt0")
-expand_mode = 3
-
-[node name="cupcake_ojo" type="MarginContainer" parent="UI/Control/Background"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -120.0
-offset_right = 220.0
-offset_bottom = 120.0
-grow_vertical = 2
-theme_override_constants/margin_left = 120
-theme_override_constants/margin_top = 140
-
-[node name="cupcake_ojo" type="TextureRect" parent="UI/Control/Background/cupcake_ojo"]
+[node name="cupcake_ojo2" type="TextureRect" parent="UI/Control/Background"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+anchor_left = 0.052
+anchor_top = 0.531
+anchor_right = 0.095
+anchor_bottom = 0.685
+offset_left = 0.192001
+offset_top = -0.0880127
+offset_right = 1.11998
+offset_bottom = 0.119965
 texture = ExtResource("5_u2isd")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="leche_sangre" type="MarginContainer" parent="UI/Control/Background"]
-layout_mode = 1
-offset_right = 645.0
-offset_bottom = 300.0
-theme_override_constants/margin_left = 575
-theme_override_constants/margin_top = 230
-
-[node name="leche_sangre" type="TextureRect" parent="UI/Control/Background/leche_sangre"]
+[node name="leche_sangre2" type="TextureRect" parent="UI/Control/Background"]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
+anchor_left = 0.25
+anchor_top = 0.355
+anchor_right = 0.28
+anchor_bottom = 0.463
+offset_left = -1.0
+offset_top = -0.0400085
+offset_right = -0.119995
+offset_bottom = -0.0240173
 texture = ExtResource("4_78b78")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="pastel_dedo2" type="TextureRect" parent="UI/Control/Background"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+anchor_left = 0.848
+anchor_top = 0.691
+anchor_right = 0.935
+anchor_bottom = 1.0
+offset_left = 0.207886
+offset_top = 0.231964
+offset_right = -0.240234
+texture = ExtResource("3_2egt0")
+expand_mode = 3
 
 [node name="blur-background" type="TextureRect" parent="UI/Control"]
 visible = false
@@ -171,6 +166,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_5fv4n")
 texture = SubResource("CanvasTexture_gicb4")
+
+[node name="success_sound" type="AudioStreamPlayer2D" parent="UI/Control"]
+stream = ExtResource("6_2r8qc")
+volume_db = 15.0
+
+[node name="error_sound" type="AudioStreamPlayer2D" parent="UI/Control"]
+stream = ExtResource("7_bf4uh")
+volume_db = 15.0
 
 [node name="flechas" type="MarginContainer" parent="UI/Control"]
 layout_mode = 1
@@ -709,8 +712,8 @@ layout_mode = 2
 texture = ExtResource("12_3es0y")
 expand_mode = 1
 
-[connection signal="gui_input" from="UI/Control/Background/pastel_dedo/pastel_dedo" to="." method="_on_pastel_dedo"]
-[connection signal="gui_input" from="UI/Control/Background/cupcake_ojo/cupcake_ojo" to="." method="_on_cupcake_ojo"]
-[connection signal="gui_input" from="UI/Control/Background/leche_sangre/leche_sangre" to="." method="_on_leche_sangre"]
+[connection signal="gui_input" from="UI/Control/Background/cupcake_ojo2" to="." method="_on_cupcake_ojo"]
+[connection signal="gui_input" from="UI/Control/Background/leche_sangre2" to="." method="_on_leche_sangre"]
+[connection signal="gui_input" from="UI/Control/Background/pastel_dedo2" to="." method="_on_pastel_dedo"]
 [connection signal="pressed" from="UI/Control/flechas/HBoxContainer/flecha_izquierda" to="." method="_on_flecha_izquierda_pressed"]
 [connection signal="pressed" from="UI/Control/flechas/HBoxContainer/flecha_derecha" to="." method="_on_flecha_derecha_pressed"]
